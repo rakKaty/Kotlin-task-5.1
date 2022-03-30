@@ -1,4 +1,3 @@
-
 enum class PostType {
     Post, Copy, Reply, Postpone, Suggest
 }
@@ -18,7 +17,7 @@ data class Post(
     val likes: Likes,
     val reposts: Reposts,
     val views: Views,
-    val post_type : PostType,
+    val post_type: PostType,
     val signer_id: Int,
     val can_pin: Boolean,
     val can_delete: Boolean,
@@ -27,15 +26,20 @@ data class Post(
     val marked_as_ads: Boolean,
     val is_favorite: Boolean,
     val donut: Donut,
-    val postponed_id: Boolean
+    val postponed_id: Boolean,
+    val post_source: PostSource?,
+    val geo: Geo?,
+    val copy_history: Array<String>?,
+    val attachment: Attachment?
 )
+
 
 data class Comments(
     val count: Int,
     val can_post: Boolean,
     val groups_can_post: Boolean,
     val can_close: Boolean,
-    val can_open: Boolean
+    val can_open: Boolean,
 )
 
 data class Copyright(
@@ -57,7 +61,7 @@ data class Donut(
     val paid_duration: Int,
     val placeholder: String,
     val can_publish_free_copy: Boolean,
-    val edit_mode: String
+    val edit_mode: String,
 )
 
 data class Reposts(

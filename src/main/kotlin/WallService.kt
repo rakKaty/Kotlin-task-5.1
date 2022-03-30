@@ -1,4 +1,3 @@
-
 object WallService {
     private var posts = emptyArray<Post>()
     private var lastIdUnique: Int = 1
@@ -33,10 +32,10 @@ object WallService {
             println("post.id = " + post.id +
                     ", post.owner_id = " + post.owner_id +
                     ", date = " + post.date +
-                    ", text = " + post.text
+                    ", text = " + post.text +
+                    ", attachments = " + post.attachment
             )
         }
-
     }
 
     fun clearArray() {
