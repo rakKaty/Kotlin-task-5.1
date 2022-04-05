@@ -14,12 +14,12 @@ object WallService {
     }
 
     fun update(newPost: Post): Boolean {
-        val postId = newPost.component1()
+        val postId = newPost.id
         for ((index, post) in posts.withIndex()) {
             if (post.id == postId) {
-                val ownerIdOld = posts[index].component2()
-                val dateOld = posts[index].component5()
-                posts[index] = newPost.copy(owner_id = ownerIdOld, date = dateOld)
+                val ownerIdOld = posts[index].ownerId
+                val dateOld = posts[index].date
+                posts[index] = newPost.copy(ownerId = ownerIdOld, date = dateOld)
 
                 return true
             }
@@ -30,7 +30,7 @@ object WallService {
     fun print() {
         for (post in posts) {
             println("post.id = " + post.id +
-                    ", post.owner_id = " + post.owner_id +
+                    ", post.ownerId = " + post.ownerId +
                     ", date = " + post.date +
                     ", text = " + post.text +
                     ", attachments = " + post.attachment

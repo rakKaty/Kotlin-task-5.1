@@ -69,7 +69,7 @@ class WallServiceTest {
         val result: Boolean = WallService.add(post1) == post1
 
         //assert
-        assertEquals(true, result)
+        assertTrue(result)
     }
 
 
@@ -203,7 +203,7 @@ class WallServiceTest {
         val result: Boolean = WallService.update(post2)
 
         //assert
-        assertEquals(true, result)
+        assertTrue(result)
     }
 
     @Test
@@ -333,7 +333,7 @@ class WallServiceTest {
         val result: Boolean = WallService.update(post3)
 
         //assert
-        assertEquals(false, result)
+        assertFalse(result)
     }
 
 
